@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const rawContent = await response.text();
             const data = extractJson(rawContent);
             injectContent(data.sections);
-            new VIB34DCardBendingSystem('.ad-card, .visual-card');
+            // new VIB34DCardBendingSystem('.ad-card, .visual-card'); // Temporarily removed
         } catch (e) {
             console.error("Could not load or parse blog content:", e);
             displayError();
@@ -132,39 +132,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * ===================================================================
-     * 3. CARD BENDING SYSTEM
+     * 3. CARD BENDING SYSTEM (Temporarily removed)
      * ===================================================================
      */
 
-    class VIB34DCardBendingSystem {
-        constructor(selector) {
-            this.cards = document.querySelectorAll(selector);
-            if (this.cards.length === 0) return;
-            this.init();
-        }
+    // class VIB34DCardBendingSystem {
+    //     constructor(selector) {
+    //         this.cards = document.querySelectorAll(selector);
+    //         if (this.cards.length === 0) return;
+    //         this.init();
+    //     }
 
-        init() {
-            this.setupCardInteractions();
-        }
+    //     init() {
+    //         this.setupCardInteractions();
+    //     }
 
-        setupCardInteractions() {
-            this.cards.forEach((card) => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const deltaX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
-                    const deltaY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-                    card.style.setProperty('--rotation-z', `${deltaX * 8}deg');
-                    card.style.setProperty('--skew-x', `${-deltaY * 4}deg');
-                    card.style.setProperty('--skew-y', `${deltaX * 4}deg');
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.setProperty('--rotation-z', '0deg');
-                    card.style.setProperty('--skew-x', '0deg');
-                    card.style.setProperty('--skew-y', '0deg');
-                });
-            });
-        }
-    }
+    //     setupCardInteractions() {
+    //         this.cards.forEach((card) => {
+    //             card.addEventListener('mousemove', (e) => {
+    //                 const rect = card.getBoundingClientRect();
+    //                 const deltaX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+    //                 const deltaY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+    //                 card.style.setProperty('--rotation-z', `${deltaX * 8}deg');
+    //                 card.style.setProperty('--skew-x', `${-deltaY * 4}deg');
+    //                 card.style.setProperty('--skew-y', `${deltaX * 4}deg');
+    //             });
+    //             card.addEventListener('mouseleave', () => {
+    //                 card.style.setProperty('--rotation-z', '0deg');
+    //                 card.style.setProperty('--skew-x', '0deg');
+    //                 card.style.setProperty('--skew-y', '0deg');
+    //             });
+    //         });
+    //     }
+    // }
 
     /**
      * ===================================================================

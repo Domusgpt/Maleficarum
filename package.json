@@ -4,11 +4,15 @@
   "description": "A scroll-driven, holographic blog experience.",
   "main": "js/main.js",
   "scripts": {
-    "start": "live-server --port=6789"
+    "start": "live-server --port=6789",
+    "deploy": "gh-pages -d ."
   },
   "author": "gen-RL-MILLZ & Gemini",
   "license": "UNLICENSED",
   "dependencies": {
     "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

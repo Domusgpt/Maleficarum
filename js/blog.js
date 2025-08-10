@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Apply dynamic 3D transforms
                     card.style.setProperty('--rotation-z', `${deltaX * 8}deg');
-                    card.style.setProperty('--skew-x', `${-deltaY * 4}deg');
+                    card.style.setProperty('--skew-x', `${-deltaY * 4}deg'); // Debugging line 155
                     card.style.setProperty('--skew-y', `${deltaX * 4}deg');
                 });
 

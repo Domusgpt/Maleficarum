@@ -1,0 +1,14 @@
+{
+  "name": "vib34d-holoblog",
+  "version": "1.0.0",
+  "description": "A scroll-driven, holographic blog experience.",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "live-server --port=6789"
+  },
+  "author": "gen-RL-MILLZ & Gemini",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

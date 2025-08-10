@@ -140,10 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor(selector) {
             this.cards = document.querySelectorAll(selector);
             if (this.cards.length === 0) return;
-            this.init();
-        }
-
-        init() {
             this.setupCardInteractions();
         }
 
@@ -153,11 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const rect = card.getBoundingClientRect();
                     const deltaX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
                     const deltaY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+                    
+                    // Apply dynamic 3D transforms
                     card.style.setProperty('--rotation-z', `${deltaX * 8}deg');
                     card.style.setProperty('--skew-x', `${-deltaY * 4}deg');
                     card.style.setProperty('--skew-y', `${deltaX * 4}deg');
                 });
+
                 card.addEventListener('mouseleave', () => {
+                    // Reset transforms on mouse leave
                     card.style.setProperty('--rotation-z', '0deg');
                     card.style.setProperty('--skew-x', '0deg');
                     card.style.setProperty('--skew-y', '0deg');
